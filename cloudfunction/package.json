@@ -1,0 +1,15 @@
+{
+  "name": "jwt-ids",
+  "description": "An example of using memorystore for flagging ids",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "redis": "^2.8.0",
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="sc-gauth">
+    <Request>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">application/x-www-form-urlencoded</Header>
+            </Headers>
+            <FormParams>
+                <FormParam name="grant_type">urn:ietf:params:oauth:grant-type:jwt-bearer</FormParam>
+                <FormParam name="assertion">{jwt-variable}</FormParam>
+            </FormParams>
+            <Headers>
+                <Header name="Accept">application/json</Header>
+            </Headers>
+            <Verb>POST</Verb>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>scGauthCfResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://oauth2.googleapis.com/token</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

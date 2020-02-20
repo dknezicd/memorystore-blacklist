@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="am-checkresponse">
+    <AssignVariable>
+        <Name>response.content</Name>
+        <Ref>scBlacklistResponse.content</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>response.status</Name>
+        <Ref>scBlacklistResponse.status</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>response.status.code</Name>
+        <Ref>scBlacklistResponse.status.code</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

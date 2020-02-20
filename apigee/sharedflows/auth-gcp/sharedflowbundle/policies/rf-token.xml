@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="rf-token">
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json">
+{
+  "error" : {
+    "code" : 500.10.002,
+    "message" : "Internal server error"
+  }
+}
+</Payload>
+            <StatusCode>500</StatusCode>
+            <ReasonPhrase>Server Error</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

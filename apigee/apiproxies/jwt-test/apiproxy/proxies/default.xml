@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <!--Retrieve Service Account key and Cloud Function Target-->
+                <Name>kvm-gcp-cf</Name>
+            </Step>
+            <Step>
+                <!--Get token for Cloud Function-->
+                <Name>sf-auth-gcp</Name>
+            </Step>
+            <Step>
+                <!--Extract "jwt id". This is just for convenience of example, and should come from an actual JWT-->
+                <Name>ev-jwtid</Name>
+            </Step>
+            <Step>
+                <Name>rf-missingid</Name>
+                <Condition>blacklist.id = null</Condition>
+            </Step>
+            <Step>
+                <!--Check if id is blacklisted.-->
+                <Name>sf-blacklist-lookup</Name>
+                <Condition>request.verb = "GET"</Condition>
+            </Step>
+            <Step>
+                <!--Blacklist given id. This is based on PUT request for convenience of the example-->
+                <Name>sf-blacklist-set</Name>
+                <Condition>request.verb = "PUT"</Condition>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <!--Copy to response for example to allow visibility of the cloud function result.-->
+                <!--In an actual use case, a fault could be raised if blacklisted-->
+                <Name>am-checkresponse</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows/>
+    <HTTPProxyConnection>
+        <BasePath>/jwt-test</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

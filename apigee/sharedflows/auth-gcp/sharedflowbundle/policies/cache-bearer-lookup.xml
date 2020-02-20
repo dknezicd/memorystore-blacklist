@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="cache-bearer-lookup">
+    <CacheKey>
+        <KeyFragment>gauthBearer</KeyFragment>
+    </CacheKey>
+    <AssignTo>gauthBearer</AssignTo>
+</LookupCache>

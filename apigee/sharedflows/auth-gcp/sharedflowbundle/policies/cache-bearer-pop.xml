@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="cache-bearer-pop">
+    <CacheKey>
+        <KeyFragment>gauthBearer</KeyFragment>
+    </CacheKey>
+    <ExpirySettings>
+        <TimeoutInSec>3600</TimeoutInSec>
+    </ExpirySettings>
+    <Source>gauthBearer</Source>
+</PopulateCache>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="auth-gcp">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1582181456181</CreatedAt>
+    <CreatedBy>dknezic</CreatedBy>
+    <Description>undefined</Description>
+    <DisplayName>auth-gcp</DisplayName>
+    <LastModifiedAt>1582181456181</LastModifiedAt>
+    <LastModifiedBy>dknezic</LastModifiedBy>
+    <Resources/>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

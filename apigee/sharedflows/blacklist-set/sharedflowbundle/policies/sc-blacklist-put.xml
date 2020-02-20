@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="sc-blacklist-put">
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="Authorization">Bearer {gauthBearer}</Header>
+            </Headers>
+            <Verb>PUT</Verb>
+            <Path>jwt-ids/{blacklist.id}</Path>
+        </Set>
+    </Request>
+    <Response>scBlacklistResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{blacklist.target}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

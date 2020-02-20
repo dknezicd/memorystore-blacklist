@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="jwt-test">
+    <Basepaths>/jwt-test</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1574833366442</CreatedAt>
+    <CreatedBy>dknezic</CreatedBy>
+    <Description></Description>
+    <DisplayName>jwt-test</DisplayName>
+    <LastModifiedAt>1582181152254</LastModifiedAt>
+    <LastModifiedBy>dknezic</LastModifiedBy>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

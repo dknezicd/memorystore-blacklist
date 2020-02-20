@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="am-target">
+    <!--Regex pattern to remove everything other than the domain ie remove protocol and path. -->
+    <!--This is used in the service callout target. -->
+    <AssignVariable>
+        <Name>nonDomainRegex</Name>
+        <Value>https://|/.*</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>blacklist.target</Name>
+        <Template>{replaceAll(private.gcpAuth.target,nonDomainRegex,'')}</Template>
+    </AssignVariable>
+</AssignMessage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="jwt-gcp">
+    <Algorithm>RS256</Algorithm>
+    <PrivateKey>
+        <Value ref="private.gcpAuth.privateKey"/>
+        <Id ref="private.gcpAuth.privateKeyId"/>
+    </PrivateKey>
+    <Subject ref="private.gcpAuth.email"/>
+    <Issuer ref="private.gcpAuth.email"/>
+    <Audience>https://oauth2.googleapis.com/token</Audience>
+    <ExpiresIn>1h</ExpiresIn>
+    <AdditionalClaims>
+        <Claim name="target_audience" ref="private.gcpAuth.target"/>
+    </AdditionalClaims>
+    <OutputVariable>jwt-variable</OutputVariable>
+</GenerateJWT>

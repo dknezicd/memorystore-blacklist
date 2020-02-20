@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <!--Service Account Key missing-->
+        <Name>rf-serviceaccount</Name>
+        <Condition>private.gcpAuth.serviceKey = null</Condition>
+    </Step>
+    <Step>
+        <!--Target is missing-->
+        <Name>rf-target</Name>
+        <Condition>private.gcpAuth.target = null</Condition>
+    </Step>
+    <Step>
+        <!--Checked if cached token exists-->
+        <Name>cache-bearer-lookup</Name>
+    </Step>
+    <Step>
+        <!--Extract details from service account key-->
+        <Name>ev-authgcp</Name>
+        <Condition>lookupcache.cache-bearer-lookup.cachehit != true</Condition>
+    </Step>
+    <Step>
+        <!--Create jwt to send to token endpoint-->
+        <Name>jwt-gcp</Name>
+        <Condition>lookupcache.cache-bearer-lookup.cachehit != true</Condition>
+    </Step>
+    <Step>
+        <!--Request token from cloud oauth endpoint-->
+        <Name>sc-gauth</Name>
+        <Condition>lookupcache.cache-bearer-lookup.cachehit != true</Condition>
+    </Step>
+    <Step>
+        <!--Extract token from response-->
+        <Name>ev-gauth-bearer</Name>
+        <Condition>lookupcache.cache-bearer-lookup.cachehit != true</Condition>
+    </Step>
+    <Step>
+        <!--Cache token-->
+        <Name>cache-bearer-pop</Name>
+        <Condition>lookupcache.cache-bearer-lookup.cachehit != true</Condition>
+    </Step>
+    <Step>
+        <!--Token hasnt been generated-->
+        <Name>rf-token</Name>
+        <Condition>gauthBearer = null</Condition>
+    </Step>
+</SharedFlow>

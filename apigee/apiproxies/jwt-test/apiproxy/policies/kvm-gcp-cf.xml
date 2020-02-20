@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="kvm-gcp-cf" mapIdentifier="gcp-cf-jwtids">
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <!--Cloud function full service key json-->
+    <Get assignTo="private.gcpAuth.serviceKey">
+        <Key>
+            <Parameter>service_account_key</Parameter>
+        </Key>
+    </Get>
+    <!--Full path to Cloud function address from kvm-->
+    <!--This is used when getting the token and the domain is used in the blacklist service callout-->
+    <Get assignTo="private.gcpAuth.target">
+        <Key>
+            <Parameter>target</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

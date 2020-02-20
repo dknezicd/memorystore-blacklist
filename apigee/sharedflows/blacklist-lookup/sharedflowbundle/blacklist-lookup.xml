@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="blacklist-lookup">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1578502302335</CreatedAt>
+    <CreatedBy>dknezic</CreatedBy>
+    <Description>undefined</Description>
+    <DisplayName>blacklist-lookup</DisplayName>
+    <LastModifiedAt>1582167131638</LastModifiedAt>
+    <LastModifiedBy>dknezic</LastModifiedBy>
+    <Resources/>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

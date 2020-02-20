@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ev-authgcp">
+    <Source clearPayload="false">private.gcpAuth.serviceKey</Source>
+    <JSONPayload>
+        <Variable name="private.gcpAuth.privateKey">
+            <JSONPath>$.private_key</JSONPath>
+        </Variable>
+        <Variable name="private.gcpAuth.privateKeyId">
+            <JSONPath>$.private_key_id</JSONPath>
+        </Variable>
+        <Variable name="private.gcpAuth.email">
+            <JSONPath>$.client_email</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>
